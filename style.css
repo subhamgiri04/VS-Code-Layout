@@ -1,0 +1,381 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Segoe WPC, Segoe UI, Segoe UI Emoji Regular, sans-serif;
+  color: #ffffff;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 48px 200px auto;
+  grid-template-areas: "header header header" "section aside main";
+  background-color: #191622;
+  overflow: hidden;
+}
+
+header {
+  grid-area: header;
+  background-color: #15121e;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+}
+
+header .container .icon {
+  width: 30px;
+  height: 30px;
+  background-image: url("./Images/icon-vscode.png");
+  background-position: center;
+  background-size: 90%;
+}
+
+header .container ul {
+  display: flex;
+  list-style: none;
+}
+
+header .container ul li {
+  padding: 6px 8px;
+  font-size: 13px;
+  color: #e1e1e6;
+}
+
+header .container ul li:hover {
+  background-color: #2c2a34;
+}
+
+header .namespace {
+  padding: 0px 8px;
+  color: #e1e1e6;
+  font-size: 11px;
+}
+
+header .options {
+  display: flex;
+  align-items: center;
+}
+
+header .options .minimize {
+  padding: 14px 16px;
+}
+
+header .options .minimize:hover {
+  background-color: #2c2a34;
+}
+
+header .options .minimize .line {
+  width: 12px;
+  height: 1px;
+  background-color: #e1e1e6;
+}
+
+header .options .maximize {
+  padding: 10px 16px;
+}
+
+header .options .maximize:hover {
+  background-color: #2c2a34;
+}
+
+header .options .maximize .cube {
+  width: 10px;
+  height: 10px;
+  border: 1px solid #e1e1e6;
+}
+
+header .options .closed {
+  padding: 14px 16px;
+}
+
+header .options .closed:hover {
+  background-color: #d21021;
+}
+
+header .options .closed .icon {
+  width: 14px;
+  height: 2px;
+  background-color: #e1e1e6;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+header .options .closed .icon::after {
+  display: block;
+  content: "";
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 2px;
+  background-color: #e1e1e6;
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+main {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: main;
+  height: calc(100vh - 30px);
+}
+
+main .list-files {
+  width: 100%;
+  background-color: #15121e;
+}
+
+main .list-files ul {
+  display: flex;
+  list-style: none;
+}
+
+main .list-files ul .tab-files {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 7px 6px 7px 12px;
+  background-color: #13111b;
+  border-top: 1px solid #13111b;
+}
+
+main .list-files ul .tab-files svg {
+  width: 15px;
+}
+
+main .list-files ul .tab-files span {
+  white-space: nowrap;
+  margin-left: 7px;
+  font-size: 13px;
+  color: #5a4b81;
+}
+
+main .list-files ul .tab-files .closed {
+  display: flex;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+  padding-left: 3px;
+  border-radius: 4px;
+}
+
+main .list-files ul .tab-files .closed:hover {
+  background-color: #2d2c34;
+}
+
+main .list-files ul .tab-files.active {
+  border-top: 1px solid #8c4774;
+  background-color: #191622;
+}
+
+main .list-files ul .tab-files.active span {
+  color: #e1e1e6;
+}
+
+main .file-open {
+  display: none;
+}
+
+main .file-open .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(90vh - 30px);
+}
+
+main .file-open .content .profile .name,
+main .file-open .content .profile .this,
+main .file-open .content .profile .role {
+  font-family: JetBrains Mono, "Courier New", monospace;
+  text-align: center;
+}
+
+main .file-open .content .profile .this {
+  color: #78d1e1;
+  margin-bottom: 10px;
+}
+
+main .file-open .content .profile .name {
+  font-size: 60px;
+  color: #67e480;
+}
+
+main .file-open .content .profile .role {
+  margin-top: 10px;
+  color: #ff79c6;
+  font-size: 20px;
+}
+
+aside {
+  grid-area: aside;
+  background-color: #13111b;
+  height: calc(100vh - 30px);
+}
+
+aside .explorer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0px 8px;
+}
+
+aside .explorer .content {
+  padding: 8px;
+  font-size: 11px;
+  color: #e1e1e6;
+}
+
+aside .explorer .options {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin: 5px;
+  padding: 3px;
+}
+
+aside .explorer .options .point {
+  margin: 0px 1.5px;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background-color: #e1e1e6;
+}
+
+aside .explorer .options:hover {
+  background-color: #29282f;
+  border-radius: 5px;
+}
+
+aside .workspace {
+  width: 100%;
+  background-color: #191622;
+  display: flex;
+  padding: 3px 5px;
+}
+
+aside .workspace .arrow {
+  display: flex;
+  align-items: center;
+}
+
+aside .workspace .name {
+  margin-left: 5px;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+aside .files {
+  width: 100%;
+  list-style: none;
+  height: calc(100vh - 82px);
+  overflow: hidden auto;
+  scroll-behavior: smooth;
+}
+
+aside .files::-webkit-scrollbar {
+  background-color: transparent;
+  width: 10px;
+}
+
+aside .files::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  -webkit-transition: background-color 5s;
+  transition: background-color 5s;
+}
+
+aside .files::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(90, 93, 94, 0.31);
+}
+
+aside .files .list-file-paste {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 3px 20px;
+}
+
+aside .files .list-file-paste svg {
+  width: 18px;
+}
+
+aside .files .list-file-paste span {
+  margin-left: 5px;
+  font-size: 13px;
+}
+
+aside .files .list-file-paste:hover {
+  background-color: #25242e;
+}
+
+section {
+  grid-area: section;
+  background-color: #201b2d;
+  height: calc(100vh - 30px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+
+section .workspace {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  list-style: none;
+}
+
+section .workspace li span {
+  cursor: pointer;
+  display: block;
+  margin: 10px 8px;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #5a4b81;
+  border-radius: 5px;
+}
+
+section .workspace li span:hover {
+  border: 2px solid #e1e1e6;
+}
+
+section .workspace li.active {
+  border-left: 2px solid #944f7d;
+  background-color: #282435;
+}
+
+section .workspace li:not(:first-child) {
+  margin-top: 5px;
+}
+
+section .config {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+}
+
+section .config li span {
+  cursor: pointer;
+  display: block;
+  margin: 10px 8px;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #5a4b81;
+  border-radius: 50%;
+}
+
+section .config li span:hover {
+  border: 2px solid #e1e1e6;
+}
